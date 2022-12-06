@@ -1,14 +1,18 @@
 import java.util.Scanner;
 
 public class Interface {
-    static Scanner sc = new Scanner(System.in);
-    public static void main(String[] args) {
-        menu();
-        optionHandling();
+        private Scanner sc;
+        private LinearSearch linear;
 
-    }
+        public Interface(){
+            sc =  new Scanner(System.in);
+            linear = new LinearSearch(this.sc);
+        }
+        public void start(){
+            while(true) menu();
+        }
 
-    public static void menu() {
+    public void menu() {
 
         System.out.println("Menu of Searching and Sorting Testbed.\n");
         System.out.println("""
@@ -20,23 +24,24 @@ public class Interface {
 
                 q/Q) Quit
                 """);
+        this.optionHandling();
     }
 
-    public static void optionHandling() {
+    public void optionHandling() {
         switch (optionScanning()) {
-            case "1" -> System.out.println("1");
-            case "2" -> System.out.println("2");
-            case "3" -> System.out.println("3");
-            case "4" -> System.out.println("4");
-            case "5" -> System.out.println("5");
+            case "1" -> this.linear.start();
+            case "2" -> System.out.println("Choice 2 not implemented.\n");
+            case "3" -> System.out.println("Choice 3 not implemented.\n");
+            case "4" -> System.out.println("Choice 4 not implemented.\n");
+            case "5" -> System.out.println("Choice 5 not implemented.\n");
             case "q", "Q" -> System.exit(0);
             default -> {
-                System.out.println("Wrong input, try again.");
+                System.out.println("Wrong input, try again.\n");
                 optionHandling();
             }
         }
     }
-    public static String optionScanning() {
+    public String optionScanning() {
         System.out.print("Your choice: ");
         return sc.nextLine();
     }
