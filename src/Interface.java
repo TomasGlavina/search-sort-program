@@ -2,11 +2,11 @@ import java.util.Scanner;
 
 public class Interface {
         private Scanner sc;
-        private LinearSearch linear;
+        private Search search;
 
         public Interface(){
             sc =  new Scanner(System.in);
-            linear = new LinearSearch(this.sc);
+            search = new Search(this.sc);
         }
         public void start(){
             while(true) menu();
@@ -29,8 +29,8 @@ public class Interface {
 
     public void optionHandling() {
         switch (optionScanning()) {
-            case "1" -> this.linear.start();
-            case "2" -> System.out.println("Choice 2 not implemented.\n");
+            case "1" -> this.search.start(1);
+            case "2" -> this.search.start(2);
             case "3" -> System.out.println("Choice 3 not implemented.\n");
             case "4" -> System.out.println("Choice 4 not implemented.\n");
             case "5" -> System.out.println("Choice 5 not implemented.\n");
