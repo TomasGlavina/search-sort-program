@@ -3,10 +3,12 @@ import java.util.Scanner;
 public class Interface {
         private Scanner sc;
         private Search search;
+        private Sort sort;
 
         public Interface(){
             sc =  new Scanner(System.in);
             search = new Search(this.sc);
+            sort = new Sort();
         }
         public void start(){
             while(true) menu();
@@ -31,8 +33,8 @@ public class Interface {
         switch (optionScanning()) {
             case "1" -> this.search.start(1);
             case "2" -> this.search.start(2);
-            case "3" -> System.out.println("Choice 3 not implemented.\n");
-            case "4" -> System.out.println("Choice 4 not implemented.\n");
+            case "3" -> this.sort.start(1, "insertion");
+            case "4" -> this.sort.start(2, "quicksort");
             case "5" -> System.out.println("Choice 5 not implemented.\n");
             case "q", "Q" -> System.exit(0);
             default -> {
