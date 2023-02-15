@@ -16,6 +16,7 @@ The program is very intuitive to use and used OOP paradigm methodologies to sepe
 - ui
 - search 
 - sort 
+
 The main program calls the start() function from  that handles the main loop that is only exited when the input q/Q. 
 Then it calls the optionHandling function that takes the user input, and serves the input as an output to the Search or Sort objects created. 
 
